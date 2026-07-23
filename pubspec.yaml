@@ -1,1 +1,54 @@
+name: pdf_audiobook
+description: "PDF fayllarni ovozli kitobga aylantiruvchi mobil ilova (Android/iOS)"
+publish_to: 'none'
+version: 1.0.0+1
 
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+
+  # --- Fayl tanlash ---
+  file_picker: ^8.1.2                 # PDF faylni telefon xotirasidan tanlash
+
+  # --- PDF matn va sahifalarni o'qish ---
+  syncfusion_flutter_pdf: ^26.2.9     # PDF ichidan matn ajratib olish (page-by-page)
+  pdfx: ^2.8.0                        # PDF sahifalarini rasm (image) sifatida render qilish (OCR uchun)
+
+  # --- OCR (skanerlangan/rasmli PDF uchun) ---
+  google_mlkit_text_recognition: ^0.13.1   # On-device OCR (offline ishlaydi)
+
+  # --- Text-to-Speech (ovozli o'qish) ---
+  flutter_tts: ^4.2.0                 # uz-UZ va boshqa tillarda gaplashtirish, tezlik boshqaruvi
+
+  # --- Fon rejimida ishlash (background audio) ---
+  audio_service: ^0.18.15             # Ekran o'chganda ham TTS/audio playerni ishlatish
+  just_audio_background: ^0.0.1-beta.13 # (ixtiyoriy, agar keyinchalik audio fayl pleyer qo'shilsa)
+
+  # --- Ruxsatlar (Storage, Microphone emas, lekin fayl o'qish uchun) ---
+  permission_handler: ^11.3.1
+
+  # --- Fayl yo'llari va vaqtinchalik saqlash ---
+  path_provider: ^2.1.4
+  path: ^1.9.0
+
+  # --- Holat boshqaruvi (state management) ---
+  provider: ^6.1.2
+
+  # --- UI uchun ---
+  google_fonts: ^6.2.1
+  flutter_svg: ^2.0.10
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/
+    - assets/images/
